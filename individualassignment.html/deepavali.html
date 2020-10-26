@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>HAPPY DEEPAVALI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+        background-color:purple;
+        background-image: url('dep.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+    }
+    p{
+        font-size: x-large;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+    }
+            .mystyle {
+            width: 100%;
+            padding: 5px;
+            background-color: rgb(85, 18, 105);
+            color: white;
+            font-size: 25px;
+            box-sizing: border-box;
+            }
+    .img1{
+                display: block;
+            margin-left: auto;
+            margin-right: auto;
+         
+            }
+    .div1 {
+        width: 100px;
+        height: 100px;
+      
+        position: relative;
+        animation-name: light;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        }
+
+        @keyframes light {
+        0%   { left:0px; top:0px;}
+        25%  { left:1000px; top:0px;}
+        50%  { left:1100px; top:300px;}
+        75%  { left:10px; top:300px;}
+        100% { left:0px; top:0px;}
+        } 
+     
+        </style>
+    </head>
+    <body>
+        <button onclick="myFunction()">Click it</button>
+
+        <div id="myDIV">
+            <marquee scrollamount="20"> <p>இனிய தீபாவளி வாழ்த்துகள் HAPPY DEEPAVALI</p></marquee>
+        </div>
+
+        <script>
+        function myFunction() {
+        var element = document.getElementById("myDIV");
+        element.classList.toggle("mystyle");
+        }
+    
+        </script>
+        
+       
+      <div class="div1"> <img src="light.gif"></div>
+       <img class="img1" src="dan.gif" height="300" width="600">
+        <br>
+       <font size="6" color="yellow"><b>Send E-card: </b></font>
+       <input onfocus="if(this.value == 'Enter your name') { this.value = ''; }" type="text" id="textboxid" name="myname" value="Enter your name">
+       <img onclick="sendtowhatsapp();" src="whatsapp.png" alt="whatsapp" align="center" style="max-width:50;height:50;">
+ 
+    </body>
+</html>

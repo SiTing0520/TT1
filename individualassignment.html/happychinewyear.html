@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title>HAPPY CHINESE NEW YEAR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        
+        body {
+        background-image: linear-gradient(-154deg, red 0%, rgb(59, 1, 6) 100%);
+       }
+        .marquee{
+            font-size: xx-large;
+            font-style: oblique ;
+            font-weight: bolder;
+            font-family: 'Trebuchet MS';
+            color: gold;
+        }
+        p {
+            text-align: center;
+            font-size: 25px;
+            color: wheat;
+            }
+        .card-holder {
+        position: relative;
+        width: 320px;
+        height: 148px;
+        
+        }
+        .card-holder:hover .card.-front {
+        transform: rotateY(-0.5turn);
+        
+        }
+        .card-holder:hover .card.-back {
+        transform: rotateY(0turn);
+        }
+
+        .card {
+        position: absolute;
+        transition: transform 1s ease;
+        backface-visibility: hidden;
+        }
+
+        .-flipped {
+        transform: rotateY(0.5turn);
+        }
+
+        .container {
+        perspective: 1000px;
+        }
+        ::selection {
+        background-color: #1D1F20;
+       
+        }
+        
+        .container {
+        height: 62%;
+        padding: 52px;
+       
+        display: flex;
+        align-items: center;
+        float: left;
+        justify-content: center;
+        box-sizing: border-box;
+
+        }
+        .container.-column {
+        flex-direction: column;
+        }
+        .container2 {
+        height: 62%;
+        padding: 52px;
+        
+        display: flex;
+        align-items: center;
+        float:right;
+        justify-content: center;
+        box-sizing: border-box;
+        }
+        .container2.-column {
+        flex-direction: column;
+        }
+
+        .card {
+        background-image: linear-gradient(-154deg, purple 0%, #ECEFF2 100%);
+        border-radius: 0px;
+        padding: 10px;
+        width: 500px;
+        font-size: 24px;
+        line-height: 32px;
+        color: black;
+        min-height: 124px;
+        box-sizing: border-box;
+        border-radius: 18px;
+
+        }
+        .card.-small {
+        width: 320px;
+        }
+
+        img{
+            width: 300;
+            height: 280;
+        }
+        .clip-text {
+        background: url(https://media.tenor.com/images/e7a451f173f54aa9bed8b3543f77cd2b/tenor.gif);
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        color: transparent;
+        width: 200px;
+        height: 200px;
+        margin: 10px 10px 10px 100px;
+        box-sizing: border-box;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        flex-shrink: 0;
+        }
+        
+        </style>
+    </head>
+    <body>
+        
+        <audio controls src="hpny.mp3">
+        </audio>
+      
+        <p id="demo"></p>
+        <script>
+            var countDownDate = new Date("Feb 12, 2021 12:00:00").getTime();
+            var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+              
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+              + minutes + "m " + seconds + "s ";
+
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "HAPPY NEW YEAR!";
+              }
+            }, 1000);
+        </script>
+         <div class="container  -column">
+            <div class="card-holder ">
+              <div  class="card -small -back -flipped">
+                  
+                <img src="hongbao.gif">                
+            </div>
+              <div class="card -small -front  "><p>POINT ON ME</p>
+              </div>
+            </div>  
+        </div>
+        <div class="container">
+            <div class="clip-text">
+              HAPPY NEW YEAR
+            </div>
+          </div>
+            <div class="container2 -column">
+            <div class="card-holder">
+              <div class="card -small -back -flipped">
+                <img src="zhufu.gif">  
+              </div>
+              <div class="card -small -front "><p>POINT ON ME</p>
+              </div>
+            </div>
+        </div>
+       
+            <marquee behavior="scroll" direction="left" scrollamount="30">
+                <p ><pre class="marquee">恭喜发财    新年快乐    万事如意    心想事成    身体健康    财源广进</pre>
+                </p>
+            </marquee>
+          <audio autoplay hidden loop>
+            <source src="hpny.mp3" type="audio/mpeg">
+          </audio><br>
+          <font size="6" color="yellow"><b>Send E-card: </b></font>
+          <input onfocus="if(this.value == 'Enter your name') { this.value = ''; }" type="text" id="textboxid" name="myname" value="Enter your name">
+          <img onclick="sendtowhatsapp();" src="whatsapp.png" alt="whatsapp" align="center" style="max-width:50;height:50;">
+    
+    </body>
+   
+</html>

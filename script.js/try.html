@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>this to show event handles</title>
+    </head>
+    <body>
+        <button onclick="myFunction()">CLICK ME </button>
+        <button onclick="myFunction2()"><img src="C:\Users\DELL\OneDrive\Pictures\Screenshots/roboticon.png" ></button>
+        <div id="error"></div>
+        <div ><img src="C:\Users\DELL\OneDrive\Pictures\Screenshots/roboticon.png" id="icon1"></div>
+        <div><button onclick="changeText();">CLICK ME TEXT</button></div>
+        <span id="output">replace me</span>
+        <input id="textbox" type="text">
+            <script>
+                function myFunction(){
+                    //alert("HELLO");
+                    document.getElementById("error").innerHTML="hello";
+                }
+                function myFunction2(){
+                    alert("THIS IS A IMAGE");
+                    var source = document.getElementById("icon1").src;
+
+                   // alert(source);
+
+                    if(source=="file:///C:/Users/DELL/OneDrive/Pictures/Screenshots/roboticon.png")
+                    document.getElementById("icon1").src="peiyichou.png";
+                    else
+                    document.getElementById("icon1").src="roboticon.png";
+                }
+                function changeText(){
+                    var span= document.getElementById("output");
+                    var textbox = document.getElementById("textbox");  
+                    textbox.style.color="red";       
+                }
+
+            </script>
+      
+    </body>
+</html>
